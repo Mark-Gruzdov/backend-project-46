@@ -1,0 +1,27 @@
+{
+  "name": "@hexlet/code",
+  "description": "[![Actions Status](https://github.com/Mark-Gruzdov/backend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Mark-Gruzdov/backend-project-46/actions)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark-Gruzdov/backend-project-46.git"
+  },
+  "author": "Mark Gruzdov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mark-Gruzdov/backend-project-46/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/Mark-Gruzdov/backend-project-46#readme",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "npm": "^10.5.0"
+  }
+}
