@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Mark-Gruzdov/backend-project-46#readme",
   "dependencies": {
     "commander": "^12.0.0",
+    "lodash": "^4.17.21",
     "npm": "^10.5.0",
     "yaml": "^2.4.1",
     "yaml-import": "^2.0.0"

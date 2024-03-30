@@ -1,21 +1,26 @@
 import process from 'process';
 import path from 'path';
-import YAML from 'yaml';
 import { readFileSync } from 'fs';
+import parse from './parse.js';
+import compare from './compare.js';
+import getOutput from './output.js';
 
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const getFileType = (filepath) => path.extname(filepath);
 const getFileData = (filepath) => readFileSync(getFilePath(filepath));
-const parse = (fileData, ext) => {
-  console.log(`fileData >>> ${fileData}`);
-  console.log(`ext >>> ${ext}`);
-    switch (ext) {
-      case '.json':
-        return JSON.parse(fileData);
-      case '.yml':
-        return YAML.parse(fileData);
-      default:
-        throw new Error(`Unknown format ${ext}!`);
-    }
+const gendiff = (filepath1, filepath2) => {
+  const path1 = getFilePath(filepath1);
+  const fileType1 = getFileType(filepath1);
+  const fileData1 = getFileData(path1);
+
+  const path2 = getFilePath(filepath2);
+  const fileType2 = getFileType(filepath2);
+  const fileData2 = getFileData(path2);
+
+  const parseData1 = parse(fileData1, fileType1);
+  const parseData2 = parse(fileData2, fileType2);
+  const compareData = compare(parseData1, parseData2);
+  return getOutput(compareData);
 };
-export  { getFilePath, getFileType, getFileData, parse };
+
+export  { gendiff };
