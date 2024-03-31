@@ -1,6 +1,9 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Mark-Gruzdov/backend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Mark-Gruzdov/backend-project-46/actions)
 
+### Node CI status:
+[![Actions Status](https://github.com/Mark-Gruzdov/backend-project-46/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Mark-Gruzdov/backend-project-46/actions)
+
 ### Codeclimate status: 
 [![Maintainability](https://api.codeclimate.com/v1/badges/3065897c99f94ffd3c7b/maintainability)](https://codeclimate.com/github/Mark-Gruzdov/backend-project-46/maintainability)
 
