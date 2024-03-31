@@ -23,4 +23,4 @@ const gendiff = (filepath1, filepath2) => {
   return getOutput(compareData);
 };
 
-export  { gendiff };
+export default gendiff;

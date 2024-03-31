@@ -10,3 +10,6 @@ publish: #публикация
 
 lint: #проверка линтером
 	npx eslint .
+
+test:
+	npm test
