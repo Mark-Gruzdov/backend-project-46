@@ -1,13 +1,13 @@
 import process from 'process';
 import path from 'path';
 import { readFileSync } from 'fs';
-import parse from './parse.js';
+import parse from './parsers.js';
 import compare from './compare.js';
 import getOutput from './output.js';
 
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const getFileType = (filepath) => path.extname(filepath);
-const getFileData = (filepath) => readFileSync(getFilePath(filepath));
+const getFileData = (filepath) => readFileSync(getFilePath(filepath), 'utf-8');
 const gendiff = (filepath1, filepath2) => {
   const path1 = getFilePath(filepath1);
   const fileType1 = getFileType(filepath1);
