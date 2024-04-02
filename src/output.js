@@ -34,8 +34,7 @@ const getOutput = (tree) => {
         case 'differ':
           return [
             `${leftIndent}- ${key}: ${getString(value1, depth + 1)}`,
-            `${leftIndent}+ ${key}: ${getString(value2, depth + 1)}`,
-          ];
+            `${leftIndent}+ ${key}: ${getString(value2, depth + 1)}`];
         default:
           throw new Error(`Unknown type ${state}.`);
       }
