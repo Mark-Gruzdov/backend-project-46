@@ -4,3 +4,4 @@ gendiff_flat_yaml.cast
 gendiff_reference.cast
 gendiff_version.cast
 gendiff_plain.cast
+gendiff_json.cast

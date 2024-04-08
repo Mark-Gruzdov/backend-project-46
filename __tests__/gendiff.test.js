@@ -23,3 +23,10 @@ test.each(files)('check comparing "plain" files', (file1, file2) => {
   const result = readFileSync(getFilePath('plain_result.txt'), 'utf-8');
   expect(gendiff(filepath1, filepath2, 'plain')).toEqual(result);
 });
+
+test.each(files)('check comparing "JSON" files', (file1, file2) => {
+  const filepath1 = getFilePath(file1);
+  const filepath2 = getFilePath(file2);
+  const result = readFileSync(getFilePath('json_result.txt'), 'utf-8');
+  expect(gendiff(filepath1, filepath2, 'json')).toEqual(result);
+});
