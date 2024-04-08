@@ -13,6 +13,13 @@ const getFilePath = (filepath) => path.join(__dirname, '..', '__fixtures__', fil
 test.each(files)('check comparing "stylish" files', (file1, file2) => {
   const filepath1 = getFilePath(file1);
   const filepath2 = getFilePath(file2);
-  const result = readFileSync(getFilePath('result.txt'), 'utf-8');
-  expect(gendiff(filepath1, filepath2)).toEqual(result);
+  const result = readFileSync(getFilePath('stylish_result.txt'), 'utf-8');
+  expect(gendiff(filepath1, filepath2, 'stylish')).toEqual(result);
+});
+
+test.each(files)('check comparing "plain" files', (file1, file2) => {
+  const filepath1 = getFilePath(file1);
+  const filepath2 = getFilePath(file2);
+  const result = readFileSync(getFilePath('plain_result.txt'), 'utf-8');
+  expect(gendiff(filepath1, filepath2, 'plain')).toEqual(result);
 });

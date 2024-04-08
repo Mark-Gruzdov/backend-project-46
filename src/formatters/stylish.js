@@ -21,13 +21,13 @@ const getOutput = (tree) => {
       switch (state) {
         case 'nested':
           return `${getLeftIdent(depth)}  ${key}: ${iter(children, depth + 1)}`;
-        case 'only in 1':
+        case 'removed':
           return `${getLeftIdent(depth)}- ${key}: ${getString(value1, depth + 1)}`;
-        case 'only in 2':
+        case 'added':
           return `${getLeftIdent(depth)}+ ${key}: ${getString(value2, depth + 1)}`;
         case 'matched':
           return `${getLeftIdent(depth)}  ${key}: ${getString(value1, depth + 1)}`;
-        case 'differ':
+        case 'updated':
           return [
             `${getLeftIdent(depth)}- ${key}: ${getString(value1, depth + 1)}`,
             `${getLeftIdent(depth)}+ ${key}: ${getString(value2, depth + 1)}`];

@@ -16,17 +16,17 @@ const compare = (data1, data2) => {
     const isKeyInData2 = _.has(data2, key);
 
     switch (true) {
-      case isKeyInData1 && !isKeyInData2:
-        return { key, value1, state: 'only in 1' };
-      case !isKeyInData1 && isKeyInData2:
-        return { key, value2, state: 'only in 2' };
       case _.isObject(value1) && _.isObject(value2):
         return { key, children: compare(value1, value2), state: 'nested' };
+      case isKeyInData1 && !isKeyInData2:
+        return { key, value1, state: 'removed' };
+      case !isKeyInData1 && isKeyInData2:
+        return { key, value2, state: 'added' };
       case _.isEqual(value1, value2):
         return { key, value1, state: 'matched' };
       default:
         return {
-          key, value1, value2, state: 'differ',
+          key, value1, value2, state: 'updated',
         };
     }
   });
