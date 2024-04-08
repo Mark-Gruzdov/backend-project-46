@@ -21,3 +21,6 @@
 
 ### Gendiff flat YAML files:
 [![asciicast](https://asciinema.org/a/650204.svg)](https://asciinema.org/a/650204)
+
+### Gendiff plain format:
+[![asciicast](https://asciinema.org/a/651682.svg)](https://asciinema.org/a/651682)
