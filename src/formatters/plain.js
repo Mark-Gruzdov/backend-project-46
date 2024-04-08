@@ -5,13 +5,18 @@ const getValue = (value) => {
   return _.isObject(value) ? '[complex value]' : String(value);
 };
 
+const getCurrentPath = (path, key) => {
+  const result = path === '' ? `${key}` : `${path}.${key}`;
+  return result;
+};
+
 const getPlainOutput = (data) => {
   const iter = (value, path) => {
     const result = value.flatMap((node) => {
       const {
         key, children, state, value1, value2,
       } = node;
-      const currentPath = path === '' ? `${key}` : `${path}.${key}`;
+      const currentPath = getCurrentPath(path, key);
       switch (state) {
         case 'nested':
           return iter(children, currentPath);
