@@ -17,16 +17,16 @@ const compare = (data1, data2) => {
 
     switch (true) {
       case _.isObject(value1) && _.isObject(value2):
-        return { key, children: compare(value1, value2), state: 'nested' };
+        return { key, children: compare(value1, value2), type: 'nested' };
       case isKeyInData1 && !isKeyInData2:
-        return { key, value1, state: 'removed' };
+        return { key, value1, type: 'removed' };
       case !isKeyInData1 && isKeyInData2:
-        return { key, value2, state: 'added' };
+        return { key, value2, type: 'added' };
       case _.isEqual(value1, value2):
-        return { key, value1, state: 'matched' };
+        return { key, value1, type: 'matched' };
       default:
         return {
-          key, value1, value2, state: 'updated',
+          key, value1, value2, type: 'updated',
         };
     }
   });

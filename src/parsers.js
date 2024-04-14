@@ -1,15 +1,15 @@
 import YAML from 'yaml';
 
-const parse = (fileData, ext) => {
-  switch (ext) {
-    case '.json':
+const parse = (fileData, format) => {
+  switch (format) {
+    case 'json':
       return JSON.parse(fileData);
-    case '.yml':
+    case 'yml':
       return YAML.parse(fileData);
-    case '.yaml':
+    case 'yaml':
       return YAML.parse(fileData);
     default:
-      throw new Error(`Unknown format ${ext}!`);
+      throw new Error(`Unknown format ${format}!`);
   }
 };
 

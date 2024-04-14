@@ -14,10 +14,10 @@ const getPlainOutput = (data) => {
   const iter = (value, path) => {
     const result = value.flatMap((node) => {
       const {
-        key, children, state, value1, value2,
+        key, children, type, value1, value2,
       } = node;
       const currentPath = getCurrentPath(path, key);
-      switch (state) {
+      switch (type) {
         case 'nested':
           return iter(children, currentPath);
         case 'removed':
@@ -29,7 +29,7 @@ const getPlainOutput = (data) => {
         case 'matched':
           return [];
         default:
-          throw new Error(`Unknown type: ${state}.`);
+          throw new Error(`Unknown type: ${type}.`);
       }
     });
     return [...result].join('\n');

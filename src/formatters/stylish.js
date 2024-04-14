@@ -16,9 +16,9 @@ const getOutput = (tree) => {
   const iter = (currentValue, depth = 1) => {
     const line = currentValue.flatMap((node) => {
       const {
-        key, children, state, value1, value2,
+        key, children, type, value1, value2,
       } = node;
-      switch (state) {
+      switch (type) {
         case 'nested':
           return `${getLeftIdent(depth)}  ${key}: ${iter(children, depth + 1)}`;
         case 'removed':
@@ -32,7 +32,7 @@ const getOutput = (tree) => {
             `${getLeftIdent(depth)}- ${key}: ${getString(value1, depth + 1)}`,
             `${getLeftIdent(depth)}+ ${key}: ${getString(value2, depth + 1)}`];
         default:
-          throw new Error(`Unknown type ${state}.`);
+          throw new Error(`Unknown type ${type}.`);
       }
     });
     return ['{', ...line, `${getRightIndent(depth)}}`].join('\n');
