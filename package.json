@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "description": "[![Actions Status](https://github.com/Mark-Gruzdov/backend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Mark-Gruzdov/backend-project-46/actions)",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
