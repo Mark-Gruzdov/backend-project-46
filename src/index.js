@@ -6,7 +6,7 @@ import compare from './compare.js';
 import getOutput from './formatters/index.js';
 
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
-const getFileType = (filepath) => path.extname(filepath).split('.').pop();
+const getFileType = (filepath) => path.extname(filepath).slice(1);
 const getFileData = (filepath) => readFileSync(getFilePath(filepath), 'utf-8');
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const path1 = getFilePath(filepath1);
